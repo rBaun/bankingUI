@@ -1,27 +1,26 @@
-# BankingUI
+# Introduction
+This is a hobby project for developing the backend part of a banking application. The goal is to make something that can be released and maintained over time, such that features can be implemented as I see fit or when I have the time to do so.  
+The goal of the project is to explore/experiment with new features of Angular.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+## Getting started
+TBD
 
-## Development server
+# Tech stack
+- Typescript / Angular
+- HTML / CSS / SCSS
+- Jest / Cypress
+- npm / Angular CLI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Features
+- [ ] User registration and login
+- [ ] Signup as Customer in the Bank
+- [ ] Create different types of accounts for the Customer
+- [ ] Deposit/withdraw money to/from the account
+- [ ] Transfer money between accounts
+- [ ] Check transaction history for the owned accounts
+- [ ] Adding advisors/employees to the bank
+- [ ] Setup a loan system and loan application
+- [ ] Setup a credit card system
+- [ ] Add support for interest rates/credit scores
+- [ ] Add support for different currencies
+- [ ] Notify customers about transactions and account changes
