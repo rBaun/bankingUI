@@ -1,3 +1,7 @@
-<app-login-form [buttonText]="'Log in'"
-                [title]="'Sign in with an existing user'"
-                (submit)="onSubmit()"></app-login-form>
+<ng-container>
+  <app-login-form
+    [buttonText]="'Log in'"
+    [title]="'Sign in with an existing user'"
+    (submit)="onSubmit()"
+  ></app-login-form>
+</ng-container>

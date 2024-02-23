@@ -1,3 +1,7 @@
-<p>
-  user-sign-up works!
-</p>
+<ng-container>
+  <app-login-form
+    [buttonText]="'Register'"
+    [title]="'Sign up as a new user'"
+    (submit)="onSubmit()"
+  ></app-login-form>
+</ng-container>

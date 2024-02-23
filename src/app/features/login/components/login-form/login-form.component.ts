@@ -5,7 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { EmailInputComponent } from 'src/app/library/components/inputs/email-input/email-input.component';
 import { PasswordInputComponent } from 'src/app/library/components/inputs/password-input/password-input.component';
 import { UserCredentials } from '../../models/user-credentials.model';
-import { CompanyLogoComponent } from '../company-logo/company-logo.component';
 
 /**
  * Represents a login form component that is used for registration and login purposes
@@ -21,7 +20,6 @@ import { CompanyLogoComponent } from '../company-logo/company-logo.component';
     ReactiveFormsModule,
     EmailInputComponent,
     PasswordInputComponent,
-    CompanyLogoComponent
   ]
 })
 export class LoginFormComponent {

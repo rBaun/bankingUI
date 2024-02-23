@@ -1,2 +1,11 @@
-<!-- TODO: Use Angular MAterial tabs to create the sign-in and sign-up tabs -->
-<!-- TODO: When changing tabs, we should output the updated selected tab, such that we can display relevant content -->
+<mat-tab-group (selectedTabChange)="onTabChange($event)">
+    <!-- Login tab -->
+    <mat-tab>
+        <ng-template mat-tab-label> <mat-icon>login</mat-icon> Login </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>person_add</mat-icon> Register
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

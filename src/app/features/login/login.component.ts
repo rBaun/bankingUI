@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { LoginFooterComponent } from './components/login-footer/login-footer.component';
+import { Component } from '@angular/core';
 import { LoginNavbarComponent } from './components/login-navbar/login-navbar.component';
 import { UserSignInComponent } from './components/user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './components/user-sign-up/user-sign-up.component';
@@ -11,16 +10,19 @@ import { UserSignUpComponent } from './components/user-sign-up/user-sign-up.comp
   standalone: true,
   imports: [
     LoginNavbarComponent,
-    LoginFooterComponent,
     UserSignInComponent,
     UserSignUpComponent
   ]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  USER_LOGIN_TAB_INDEX = 0;
+  USER_REGISTER_TAB_INDEX = 1;
+
+  selectedTabIndex = 0;
 
   constructor() { }
 
-  ngOnInit() {
+  onSelectedTabIndexChanged = (index: number) => {
+    this.selectedTabIndex = index;
   }
-
 }
