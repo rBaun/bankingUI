@@ -1,11 +1,23 @@
-<!-- Title -->
-<h1>{{title}}</h1>
+<div class="container">
+    <!-- Title & Logo -->
+    <h1>{{title}}</h1>
+    <app-company-logo></app-company-logo>
 
-<!-- Email input -->
-<app-email-input></app-email-input>
+    <!-- User credentials form -->
+    <form (ngSubmit)="onSubmit()"
+          [formGroup]="loginFormGroup">
+        <!-- Email input -->
+        <app-email-input id="email-input"
+                         [emailFormControl]="emailFormControl"></app-email-input>
 
-<!-- Password input -->
-<app-password-input></app-password-input>
+        <!-- Password input -->
+        <app-password-input class="form-input"
+                            [passwordFormControl]="passwordFormControl"></app-password-input>
 
-<!-- Sign In/Sign Up button -->
-<button mat-flat-button color="primary" (click)="onButtonClick()">{{buttonText}}</button>
+        <!-- Submit button -->
+        <button class="submit-button"
+                mat-flat-button
+                type="submit"
+                color="primary">{{buttonText}}</button>
+    </form>
+</div>

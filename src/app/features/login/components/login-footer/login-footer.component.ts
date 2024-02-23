@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-login-footer',
   templateUrl: './login-footer.component.html',
-  styleUrls: ['./login-footer.component.scss']
+  styleUrls: ['./login-footer.component.scss'],
+  standalone: true
 })
 export class LoginFooterComponent implements OnInit {
 
