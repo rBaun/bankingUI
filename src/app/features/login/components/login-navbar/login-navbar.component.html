@@ -1,0 +1,11 @@
+<mat-tab-group (selectedTabChange)="onTabChange($event)">
+  <!-- Login tab -->
+  <mat-tab>
+    <ng-template mat-tab-label> <mat-icon>login</mat-icon> Login </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon>person_add</mat-icon> Register
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

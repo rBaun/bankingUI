@@ -1,0 +1,20 @@
+<div class="container">
+  <!-- Title -->
+  <h1>{{ title }}</h1>
+
+  <!-- User credentials form -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginFormGroup">
+    <!-- Email input -->
+    <app-email-input [emailFormControl]="emailFormControl"></app-email-input>
+
+    <!-- Password input -->
+    <app-password-input
+      [passwordFormControl]="passwordFormControl"
+    ></app-password-input>
+
+    <!-- Submit button -->
+    <button class="submit-button" mat-flat-button type="submit" color="primary">
+      {{ buttonText }}
+    </button>
+  </form>
+</div>

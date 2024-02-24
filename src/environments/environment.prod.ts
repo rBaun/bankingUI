@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://bankingapi-5ruj.onrender.com/api'
 };
