@@ -1,14 +1,18 @@
 <div class="container">
-    <!-- Tabs -->
-    <app-login-navbar (selectedTabIndexChanged)="onSelectedTabIndexChanged($event)"></app-login-navbar>
+  <!-- Tabs -->
+  <app-login-navbar
+    (selectedTabIndexChanged)="onSelectedTabIndexChanged($event)"
+  ></app-login-navbar>
 
-    <!-- Sign in tab -->
-    @if (selectedTabIndex === USER_LOGIN_TAB_INDEX) {
+  <!-- Sign in tab -->
+  @if (selectedTabIndex === USER_LOGIN_TAB_INDEX) {
     <app-user-sign-in></app-user-sign-in>
-    }
+  }
 
-    <!-- Sign up tab -->
-    @if (selectedTabIndex === USER_REGISTER_TAB_INDEX) {
-    <app-user-sign-up></app-user-sign-up>
-    }
+  <!-- Sign up tab -->
+  @if (selectedTabIndex === USER_REGISTER_TAB_INDEX) {
+    <app-user-sign-up
+      (submitNewUser)="onRegisterClick($event)"
+    ></app-user-sign-up>
+  }
 </div>

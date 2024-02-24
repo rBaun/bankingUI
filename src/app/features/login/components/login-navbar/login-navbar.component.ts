@@ -15,7 +15,5 @@ import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 export class LoginNavbarComponent {
   @Output() selectedTabIndexChanged = new EventEmitter<number>();
 
-  onTabChange = (event: MatTabChangeEvent): void => {
-    this.selectedTabIndexChanged.emit(event.index);
-  }
+  onTabChange = (event: MatTabChangeEvent): void => this.selectedTabIndexChanged.emit(event.index);
 }

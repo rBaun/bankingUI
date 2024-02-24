@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { UserCredentials } from '../../models/user-credentials.model';
 import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
@@ -10,15 +11,8 @@ import { LoginFormComponent } from '../login-form/login-form.component';
     LoginFormComponent
   ]
 })
-export class UserSignInComponent implements OnInit {
+export class UserSignInComponent {
+  @Output() submitLogin = new EventEmitter<UserCredentials>();
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  onSubmit = (): void => {
-
-  }
-
+  onSubmit = (credentials: UserCredentials): void => this.submitLogin.emit(credentials);
 }

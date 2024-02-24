@@ -23,23 +23,9 @@ import { UserCredentials } from '../../models/user-credentials.model';
   ]
 })
 export class LoginFormComponent {
-  /**
-   * The title of the login form.
-   * @example 'Sign up'
-   */
+
   @Input() title?: string;
-
-  /**
-   * The text to display on the submit button
-   * @example 'Submit'
-   */
   @Input() buttonText: string | undefined;
-
-  /**
-   * Event emitted when the form is submitted.
-   * @emits email/password, if form is valid
-   * @emits null, if form is invalid
-   */
   @Output() submitForm = new EventEmitter<UserCredentials>();
 
   public loginFormGroup: FormGroup;
@@ -55,14 +41,10 @@ export class LoginFormComponent {
     });
   }
 
-  onSubmit = (): void => {
-    if (!this.loginFormGroup.valid) { this.emitInvalidUserCredentials() }
-
-    this.emitUserCredentials();
-  };
+  onSubmit = (): void => this.loginFormGroup.valid ? this.emitValidUserCredentials() : this.emitInvalidUserCredentials();
 
   private emitInvalidUserCredentials = (): void => this.submitForm.emit({ valid: false });
-  private emitUserCredentials = (): void => this.submitForm.emit({ email: this.emailFormControl.value, password: this.passwordFormControl.value, valid: true });
+  private emitValidUserCredentials = (): void => this.submitForm.emit({ email: this.emailFormControl.value, password: this.passwordFormControl.value, valid: true });
 
   get emailFormControl(): FormControl { return this.loginFormGroup.get('email') as FormControl; }
   get passwordFormControl(): FormControl { return this.loginFormGroup.get('password') as FormControl; }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { UserCredentials } from '../../models/user-credentials.model';
 import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
@@ -11,10 +12,7 @@ import { LoginFormComponent } from '../login-form/login-form.component';
   ]
 })
 export class UserSignUpComponent {
+  @Output() submitNewUser = new EventEmitter<UserCredentials>();
 
-  constructor() { }
-
-  onSubmit = (): void => {
-
-  }
+  onSubmit = (credentials: UserCredentials): void => this.submitNewUser.emit(credentials);
 }
