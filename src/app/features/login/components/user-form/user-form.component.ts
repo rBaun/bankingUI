@@ -2,17 +2,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { EmailInputComponent } from 'src/app/library/components/inputs/email-input/email-input.component';
-import { PasswordInputComponent } from 'src/app/library/components/inputs/password-input/password-input.component';
+import { EmailInputComponent } from 'src/app/shared/components/email-input/email-input.component';
+import { ErrorMessageComponent } from 'src/app/shared/components/error-message/error-message.component';
+import { PasswordInputComponent } from 'src/app/shared/components/password-input/password-input.component';
 import { UserCredentials } from '../../models/user-credentials.model';
 
 /**
  * Represents a login form component that is used for registration and login purposes
  */
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss'],
+  selector: 'app-user-form',
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.scss'],
   standalone: true,
   imports: [
     MatButtonModule,
@@ -20,12 +21,13 @@ import { UserCredentials } from '../../models/user-credentials.model';
     ReactiveFormsModule,
     EmailInputComponent,
     PasswordInputComponent,
+    ErrorMessageComponent,
   ]
 })
-export class LoginFormComponent {
-
+export class UserFormComponent {
+  @Input() errorMessage?: string;
   @Input() title?: string;
-  @Input() buttonText: string | undefined;
+  @Input() buttonText?: string;
   @Output() submitForm = new EventEmitter<UserCredentials>();
 
   public loginFormGroup: FormGroup;

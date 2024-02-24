@@ -11,8 +11,8 @@ TBD
 - Jest / Cypress
 - npm / Angular CLI
 
-# Features
-- [ ] User registration and login
+# Features*
+- [x] User registration and login
 - [ ] Signup as Customer in the Bank
 - [ ] Create different types of accounts for the Customer
 - [ ] Deposit/withdraw money to/from the account
@@ -24,3 +24,15 @@ TBD
 - [ ] Add support for interest rates/credit scores
 - [ ] Add support for different currencies
 - [ ] Notify customers about transactions and account changes
+
+# Authentication
+This project is initially created using JWT for authentication purposes, but in case a different authentication is required, then this can be changed.
+
+## Adding New Authentication Strategy
+Authentication is implemented using strategy/factory pattern, which makes it easy to switch authentication method:
+
+- Create a new class that implements `AuthStrategy`
+- Update the `AuthType` to include the new strategy
+- Configure `environment.authStrategy` to change strategy
+
+***Disclaimer:** Make sure that the server supports the new strategy.*

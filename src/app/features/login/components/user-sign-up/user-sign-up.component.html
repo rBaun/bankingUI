@@ -1,7 +1,8 @@
 <ng-container>
-  <app-login-form
+  <app-user-form
+    [errorMessage]="errorMessage"
     [buttonText]="'Register'"
     [title]="'Sign up as a new user'"
     (submitForm)="onSubmit($event)"
-  ></app-login-form>
+  ></app-user-form>
 </ng-container>

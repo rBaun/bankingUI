@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UserCredentials } from '../../models/user-credentials.model';
-import { LoginFormComponent } from '../login-form/login-form.component';
+import { UserFormComponent } from '../user-form/user-form.component';
 
 @Component({
   selector: 'app-user-sign-in',
@@ -8,10 +8,11 @@ import { LoginFormComponent } from '../login-form/login-form.component';
   styleUrls: ['./user-sign-in.component.scss'],
   standalone: true,
   imports: [
-    LoginFormComponent
+    UserFormComponent
   ]
 })
 export class UserSignInComponent {
+  @Input() errorMessage?: string;
   @Output() submitLogin = new EventEmitter<UserCredentials>();
 
   onSubmit = (credentials: UserCredentials): void => this.submitLogin.emit(credentials);

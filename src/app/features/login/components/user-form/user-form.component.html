@@ -2,12 +2,12 @@
   <!-- Title -->
   <h1>{{ title }}</h1>
 
+  <!-- Server error message -->
+  <app-error-message [message]="errorMessage"></app-error-message>
+
   <!-- User credentials form -->
   <form (ngSubmit)="onSubmit()" [formGroup]="loginFormGroup">
-    <!-- Email input -->
     <app-email-input [emailFormControl]="emailFormControl"></app-email-input>
-
-    <!-- Password input -->
     <app-password-input
       [passwordFormControl]="passwordFormControl"
     ></app-password-input>
