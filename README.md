@@ -11,7 +11,7 @@ TBD
 - Jest / Cypress
 - npm / Angular CLI
 
-# Features*
+# Features
 - [x] User registration and login
 - [ ] Signup as Customer in the Bank
 - [ ] Create different types of accounts for the Customer
