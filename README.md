@@ -2,12 +2,12 @@
 This is a hobby project for developing the backend part of a banking application. The goal is to make something that can be released and maintained over time, such that features can be implemented as I see fit or when I have the time to do so.  
 The goal of the project is to explore/experiment with new features of Angular.
 
-## Getting started
+## Getting Started
 TBD
 
 # Tech stack
 - Typescript / Angular
-- HTML / CSS / SCSS
+- HTML / CSS / SCSS / Angular Material
 - Jest / Cypress
 - npm / Angular CLI
 
@@ -36,3 +36,25 @@ Authentication is implemented using strategy/factory pattern, which makes it eas
 - Configure `environment.authStrategy` to change strategy
 
 ***Disclaimer:** Make sure that the server supports the new strategy.*
+
+# Routing (WIP)
+This project will focus on not using a single Module and instead utilize the standalone features. This means routing might be implemented different. This section will function as a cheatsheet to easily add a new route.
+
+## Lazy Loading Another Routing Config
+```
+{
+    path: 'login',
+    loadChildren: () => import('./features/login/login.routes')
+        .then(m => m.LOGIN_ROUTES)
+}
+```
+
+## Lazy Loading Standalone Component
+
+```
+{
+    path: 'login',
+    loadComponent: () => import(./features/login/login.component)
+        .then(m => m.LoginComponent)
+}
+```
