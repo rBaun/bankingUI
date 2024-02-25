@@ -1,31 +1,15 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ConfigService } from '../services/config.service';
+import { HttpInterceptorFn } from "@angular/common/http";
 
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export const authInterceptor: HttpInterceptorFn = (request, next) => {
+    const token = localStorage.getItem('token');
 
-    constructor(
-        private config: ConfigService
-    ) { }
-
-    /**
-     * Add Bearer token to the Authorization request header to all requests that requires a token
-     */
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const token = localStorage.getItem('token');
-
-        if (token && !this.isAuthEndpoint(request.url)) {
-            request = request.clone({
-                setHeaders: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-        }
-
-        return next.handle(request);
+    if (token) {
+        request = request.clone({
+            setHeaders: {
+                Authorization: `Bearer ${token}`
+            }
+        });
     }
 
-    private isAuthEndpoint = (url: string): boolean => url.includes(this.config.loginUrl()) || url.includes(this.config.registerUrl());
+    return next(request);
 }

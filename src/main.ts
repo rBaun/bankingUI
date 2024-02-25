@@ -1,18 +1,21 @@
-import { HttpClientModule } from '@angular/common/http';
-import { importProvidersFrom } from '@angular/core';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PreloadAllModules, provideRouter, withPreloading } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { MAIN_ROUTES } from './app/app.routes';
+import { authInterceptor } from './app/shared/interceptors/auth.interceptor';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(HttpClientModule),
+    provideHttpClient(
+      withInterceptors([authInterceptor])
+    ),
+    // importProvidersFrom(HttpClientModule),
     provideRouter(MAIN_ROUTES,
       withPreloading(PreloadAllModules),
       // withDebugTracing()
     ),
     provideAnimationsAsync()
   ]
-});
+}).catch((error) => console.error(error));
