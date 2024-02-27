@@ -25,6 +25,22 @@ TBD
 - [ ] Add support for different currencies
 - [ ] Notify customers about transactions and account changes
 
+# Folder Structure
+The standalone feature makes modules redundant and I want to experiment with a different kind of folder structure. The goal here is to abstract different responsibilites into different folders, such that different types of UI work can be separated. E.g. the layout/structure of a page should not be defined for a feature, since this will limit the number of possibilites. The page component should not rely on specific routes, since this will limit the possibilites, etc.
+
+## The `features` Folder
+The features folder should only contain relevant functionality for the feature. Ideally, it would use a mix of presentable components from the `shared` folder, which will be predesigned making it easier and faster to implement features. In case a presentable component does not already exist, then a new one is to be created inside the shared folder, such that any upcoming features can benefit from the presentable component.  
+Note that this also includes any styling. We want the features to be independent of structure/layout on the page, since it's not relevant for the feature.
+
+## The `shared` Folder
+Any services, components, directives or other functionality that is used in multiple components or can be used in multiple components should be placed inside of this folder.
+
+## The `routes` Folder
+This folder will contain all the route configurations for the project. Ideally, there should be a file for each page component.
+
+## The `pages` Folder
+This folder will contain the components that represents pages in the project. The page components is responsible for the layout/structure of a page and will ideally use feature component(s) to provide content for the page.
+
 # Authentication
 This project is initially created using JWT for authentication purposes, but in case a different authentication is required, then this can be changed.
 

@@ -28,7 +28,7 @@ export class LoginComponent {
     private authService: AuthService
   ) { }
 
-  onSelectedTabIndexChanged = (index: number) => {
+  onSelectedTabIndexChange = (index: number) => {
     this.errorMessage = '';
     this.selectedTabIndex = index;
   }

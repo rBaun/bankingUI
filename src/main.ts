@@ -3,7 +3,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PreloadAllModules, provideRouter, withPreloading } from '@angular/router';
 import { AppComponent } from './app/app.component';
-import { MAIN_ROUTES } from './app/app.routes';
+import { MAIN_ROUTES } from './app/routes/app.routes';
 import { authInterceptor } from './app/shared/interceptors/auth.interceptor';
 
 bootstrapApplication(AppComponent, {
@@ -11,7 +11,6 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(
       withInterceptors([authInterceptor])
     ),
-    // importProvidersFrom(HttpClientModule),
     provideRouter(MAIN_ROUTES,
       withPreloading(PreloadAllModules),
       // withDebugTracing()
