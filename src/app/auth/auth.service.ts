@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { AuthStrategyFactory } from './factory/auth-strategy.factory';
 import { AuthStrategy } from './factory/auth-strategy.interface';
 import { AuthRequest } from './models/auth-request.dto';
-import { AuthType } from './models/strategy-type.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +13,7 @@ export class AuthService {
   constructor(
     private authStrategyFactory: AuthStrategyFactory
   ) {
-    this.strategy = this.authStrategyFactory.createAuthStrategy(environment.authStrategy as AuthType)
+    this.strategy = this.authStrategyFactory.createAuthStrategy('jwt')
   }
 
   register = (credentials: AuthRequest): Observable<any> => this.strategy.register(credentials);

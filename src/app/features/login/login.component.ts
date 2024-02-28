@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 import { AuthRequest } from '../../auth/models/auth-request.dto';
 import { UserFormNavbarComponent } from './components/user-form-navbar/user-form-navbar.component';
 import { UserSignInComponent } from './components/user-sign-in/user-sign-in.component';

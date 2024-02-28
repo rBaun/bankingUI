@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { EmailInputComponent } from 'src/app/shared/components/email-input/email-input.component';
-import { ErrorMessageComponent } from 'src/app/shared/components/error-message/error-message.component';
-import { PasswordInputComponent } from 'src/app/shared/components/password-input/password-input.component';
+import { EmailInputComponent } from '../../../../shared/components/email-input/email-input.component';
+import { ErrorMessageComponent } from '../../../../shared/components/error-message/error-message.component';
+import { PasswordInputComponent } from '../../../../shared/components/password-input/password-input.component';
 import { UserCredentials } from '../../models/user-credentials.model';
 
 /**
