@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/shared/auth/auth.service';
-import { AuthRequest } from '../../shared/auth/models/auth-request.dto';
+import { AuthService } from 'src/app/auth/auth.service';
+import { AuthRequest } from '../../auth/models/auth-request.dto';
 import { UserFormNavbarComponent } from './components/user-form-navbar/user-form-navbar.component';
 import { UserSignInComponent } from './components/user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './components/user-sign-up/user-sign-up.component';
