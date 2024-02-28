@@ -2,10 +2,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ConfigService } from '../../services/config.service';
+import { ConfigService } from '../../shared/services/config.service';
+import { AuthStrategy } from '../factory/auth-strategy.interface';
 import { AuthRequest } from '../models/auth-request.dto';
 import { JwtResponse } from '../models/jwt-response.dto';
-import { AuthStrategy } from './auth-strategy.interface';
 
 @Injectable({
     providedIn: 'root'
