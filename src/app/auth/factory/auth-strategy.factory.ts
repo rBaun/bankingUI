@@ -1,8 +1,8 @@
 // auth-strategy.factory.ts
 import { Injectable } from '@angular/core';
 import { AuthType } from '../models/strategy-type.model';
+import { JwtAuthStrategy } from '../strategies/jwt-auth.strategy';
 import { AuthStrategy } from './auth-strategy.interface';
-import { JwtAuthStrategy } from './jwt-auth.strategy';
 
 @Injectable({
     providedIn: 'root'
