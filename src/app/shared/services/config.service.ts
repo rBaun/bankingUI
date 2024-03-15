@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
-  private API_BASE_URL = environment.apiUrl;
+  private API_BASE_URL = '';
 
   /* Auth Endpoints */
   private AUTH_BASE_URL = `${this.API_BASE_URL}/auth`;

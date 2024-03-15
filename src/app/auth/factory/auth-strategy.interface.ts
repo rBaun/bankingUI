@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { AuthRequest } from "src/app/auth/models/auth-request.dto";
+import { AuthRequest } from "../models/auth-request.dto";
 
 export interface AuthStrategy {
     register(credentials: AuthRequest): Observable<any>

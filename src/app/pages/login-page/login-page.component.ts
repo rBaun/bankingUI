@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginComponent } from 'src/app/features/login/login.component';
+import { LoginComponent } from '../../features/login/login.component';
 
 @Component({
   selector: 'app-login-page',
