@@ -1,8 +1,11 @@
-<!-- Customer Details -->
-<app-customer-details></app-customer-details>
+<app-customer-details
+    [customerDetails]="customerDetails"
+></app-customer-details>
 
-<!-- Customer Accounts -->
-<app-customer-accounts></app-customer-accounts>
+<app-account-list
+    [bankAccountList$]="bankAccountList$"
+></app-account-list>
 
-<!-- Latest Transactions -->
-<app-transaction-list></app-transaction-list>
+<app-transaction-list
+    [latestTransactionList$]="latestTransactionList$"
+></app-transaction-list>
