@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ConfigService {
-  private API_BASE_URL = '';
+  private API_BASE_URL = 'http://localhost:8080/api';
 
   /* Auth Endpoints */
   private AUTH_BASE_URL = `${this.API_BASE_URL}/auth`;

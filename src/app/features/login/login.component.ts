@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { AuthRequest } from '../../auth/models/auth-request.dto';
 import { UserFormNavbarComponent } from './components/user-form-navbar/user-form-navbar.component';
@@ -25,7 +26,8 @@ export class LoginComponent {
   errorMessage?: string;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   onSelectedTabIndexChange = (index: number) => {
@@ -39,11 +41,14 @@ export class LoginComponent {
     const request = this.createAuthRequest(userCredentials);
     this.authService.login(request).subscribe({
       next: response => {
-        // Handle successful login
+        // Navigate to the customer home page
+        this.router.navigate(['/dashboard']);
+
+
         console.log('Login success', response);
       },
       error: err => {
-        this.errorMessage = err.error;
+        this.handleError(err);
       }
     });
   }
@@ -58,12 +63,14 @@ export class LoginComponent {
         console.log('Registration success', response);
       },
       error: err => {
-        this.errorMessage = err.error;
+        this.handleError(err);
       }
     })
   }
 
-  private createAuthRequest = (userCredentials: UserCredentials): AuthRequest => {
-    return { username: userCredentials.email!, password: userCredentials.password! }
+  private handleError = (error: any) => {
+    this.errorMessage = error.error;
   }
+
+  private createAuthRequest = (userCredentials: UserCredentials): AuthRequest => ({ username: userCredentials.email!, password: userCredentials.password! })
 }
